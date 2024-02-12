@@ -24,8 +24,11 @@ const Index = () => {
   const goBackHandler = () => {
     if (step > 1) {
       setStep((prevIndex) => prevIndex - 1);
+      setProgress(prevProgress => prevProgress - progessRatio);
     }
   }
+
+
 
   const handleBudgetSelect = (budget) => {
     setSelectedBudget(budget);
@@ -49,7 +52,7 @@ const Index = () => {
 
   return (
     <div >
-      <Headers goBackHandler={goBackHandler} />
+      <Headers goBackHandler={goBackHandler} resetUserData={resetUserData}/>
       <ProgressBar progress={progress} />
       {
         step === 1 && <MonthlyBudget onBudgetSelect={handleBudgetSelect} />

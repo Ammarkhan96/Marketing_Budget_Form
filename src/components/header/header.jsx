@@ -1,7 +1,8 @@
 import React from 'react'
 
 
-const header = ({ goBackHandler }) => {
+const header = ({ goBackHandler, resetUserData }) => {
+    
     return (
         <div>
             <header className='h-20'>
@@ -14,7 +15,7 @@ const header = ({ goBackHandler }) => {
 
 
                     <span className="flex items-center">
-                        <button className="font-semibold font-lato text-lg leading-6 border-none bg-white pr-4 pt-6">
+                        <button onClick={resetUserData} className="font-semibold font-lato text-lg leading-6 border-none bg-white pr-4 pt-6">
                             Exit
                         </button>
                         <img className="h-9 w-8 pr-6 pt-6" src="/cancelMark.png" alt="Cancel Mark" />
